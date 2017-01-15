@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 public class Java8DemoActivity extends AppCompatActivity {
 
@@ -18,9 +19,13 @@ public class Java8DemoActivity extends AppCompatActivity {
 
     initData();
 
+    // books.stream()
+    //     .filter(bookInfo -> bookInfo.getBookName().equals("Java"))
+    //     .findFirst();
+
     books.stream()
         .filter(bookInfo -> bookInfo.getBookName().equals("Java"))
-        .findFirst();
+        .forEach(bookInfo -> Log.e("tag", bookInfo.getBookName()));
   }
 
 

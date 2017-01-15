@@ -6,8 +6,10 @@ import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.functions.Function;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.Toast;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
@@ -19,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    Button mButton = (Button) findViewById(R.id.btn);
+    mButton.setOnClickListener(
+        view -> startActivity(new Intent(MainActivity.this, Java8DemoActivity.class)));
 
     Flowable.create(new FlowableOnSubscribe<String>() {
       @Override public void subscribe(FlowableEmitter<String> e) throws Exception {
