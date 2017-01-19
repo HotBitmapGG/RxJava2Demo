@@ -9,6 +9,7 @@ import io.reactivex.functions.Function;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 import org.reactivestreams.Publisher;
@@ -63,7 +64,14 @@ public class MainActivity extends AppCompatActivity {
             throwable -> {
 
             });
+
+    Flowable.fromArray("Hellow,hcc")
+        .subscribe(s -> {
+          Log.e("tag", s);
+        });
+
+    Flowable.fromCallable(() -> "fsafsaf").subscribe(s -> {
+      Log.e("tag", s);
+    });
   }
-
-
 }
