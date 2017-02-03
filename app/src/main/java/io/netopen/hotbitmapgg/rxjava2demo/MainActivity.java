@@ -4,7 +4,10 @@ import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
+import java.util.concurrent.TimeUnit;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,5 +76,24 @@ public class MainActivity extends AppCompatActivity {
     Flowable.fromCallable(() -> "fsafsaf").subscribe(s -> {
       Log.e("tag", s);
     });
+
+    Flowable.fromArray(1, 33, 55, -1, 4, 6, 7)
+        .filter(integer -> integer > 5)
+        .subscribe(integer -> {
+
+        });
+
+    Flowable.fromArray(1, 2, 3, 4, 5, 6)
+        .filter(integer -> integer > 3)
+        .take(2)
+        .map(integer -> String.valueOf(integer.intValue()))
+        .delay(1000, TimeUnit.MILLISECONDS)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(s -> Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show(),
+            throwable -> Toast.makeText(MainActivity.this, throwable.getMessage(),
+                Toast.LENGTH_SHORT).show());
+
+
   }
 }
