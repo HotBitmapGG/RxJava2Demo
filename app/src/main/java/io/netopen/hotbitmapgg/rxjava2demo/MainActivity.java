@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
             throwable -> Toast.makeText(MainActivity.this, throwable.getMessage(),
                 Toast.LENGTH_SHORT).show());
 
-
+    Flowable.just("hcc")
+        .take(1)
+        .filter(s -> s.contains("c")).subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(s -> Log.d("tag", s), throwable -> Log.d("tag", throwable.getMessage()));
   }
 }
