@@ -19,13 +19,14 @@ public class Java8DemoActivity extends AppCompatActivity {
 
     initData();
 
-    // books.stream()
-    //     .filter(bookInfo -> bookInfo.getBookName().equals("Java"))
-    //     .findFirst();
-
     books.stream()
         .filter(bookInfo -> bookInfo.getBookName().equals("Java"))
         .forEach(bookInfo -> Log.e("tag", bookInfo.getBookName()));
+
+    books.stream()
+        .filter(bookInfo -> bookInfo.getBookName().endsWith("a"))
+        .map(BookInfo::getBookName)
+        .forEach(s -> Log.e("tag", s));
   }
 
 
