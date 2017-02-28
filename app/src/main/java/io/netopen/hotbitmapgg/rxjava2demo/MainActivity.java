@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button mButton = (Button) findViewById(R.id.btn);
     mButton.setOnClickListener(
-        view -> startActivity(new Intent(MainActivity.this, Java8DemoActivity.class)));
+        view -> startActivity(new Intent(MainActivity.this, NetWorkActivity.class)));
 
     Flowable.create(new FlowableOnSubscribe<String>() {
       @Override public void subscribe(FlowableEmitter<String> e) throws Exception {
