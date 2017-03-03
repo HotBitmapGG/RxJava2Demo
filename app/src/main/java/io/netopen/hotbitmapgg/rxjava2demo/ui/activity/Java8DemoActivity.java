@@ -1,5 +1,7 @@
-package io.netopen.hotbitmapgg.rxjava2demo;
+package io.netopen.hotbitmapgg.rxjava2demo.ui.activity;
 
+import io.netopen.hotbitmapgg.rxjava2demo.R;
+import io.netopen.hotbitmapgg.rxjava2demo.bean.BookInfo;
 import java.util.ArrayList;
 import java.util.List;
 

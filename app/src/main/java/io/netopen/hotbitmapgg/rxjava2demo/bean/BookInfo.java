@@ -1,4 +1,4 @@
-package io.netopen.hotbitmapgg.rxjava2demo;
+package io.netopen.hotbitmapgg.rxjava2demo.bean;
 
 /**
  * Created by hcc on 2017/1/12 16:46

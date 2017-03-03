@@ -1,4 +1,4 @@
-package io.netopen.hotbitmapgg.rxjava2demo.adapter;
+package io.netopen.hotbitmapgg.rxjava2demo.ui.adapter.base;
 
 import java.util.List;
 

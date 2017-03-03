@@ -1,5 +1,6 @@
-package io.netopen.hotbitmapgg.rxjava2demo;
+package io.netopen.hotbitmapgg.rxjava2demo.ui.activity;
 
+import io.netopen.hotbitmapgg.rxjava2demo.R;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;

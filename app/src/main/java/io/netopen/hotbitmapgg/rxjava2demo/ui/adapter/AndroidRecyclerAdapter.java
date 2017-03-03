@@ -1,7 +1,8 @@
-package io.netopen.hotbitmapgg.rxjava2demo.adapter;
+package io.netopen.hotbitmapgg.rxjava2demo.ui.adapter;
 
 import io.netopen.hotbitmapgg.rxjava2demo.R;
 import io.netopen.hotbitmapgg.rxjava2demo.bean.AndroidInfo;
+import io.netopen.hotbitmapgg.rxjava2demo.ui.adapter.base.AbsRecyclerViewAdapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
